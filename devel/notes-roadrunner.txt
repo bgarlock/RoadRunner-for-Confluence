@@ -1,0 +1,51 @@
+strategy - algorithms:
+---------
+- get local server page time stamps
+- get remote server page time stamps
+
+
+
+
+==========================================
+
+- synchronizations are not exactly atomic, so if someone updates a page at the exact second of a synchronization it is possible that roadrunner would miss that update
+- no data is ever deleted only added. 
+
+- outline first synch flow with visio
+  - wizard
+    - is this a first synch?
+      - get space from server
+
+- what activities are not synched:
+  ? - comments?
+
+Description of how things work:
+- when you synchronize RoadRunner looks for changes to your local system and changes to the server
+since the last synch. Changes include:
+    - page updates
+    - pages added
+    - NOT pages deleted
+    - pages renamed
+
+
+Update types to consider:
+- page added
+- page deleted
+- page updated
+- page renamed
+- attachment uploaded
+- comments added
+- news added
+
+Purpose:
+RoadRunner is meant to help travellers keep an instance of Confluence on their laptops
+with a personal license synchronized with a single server instance of Confluence. 
+
+=======================
+phase 1:
+--------
+- to synch a space you must initially do an export/import from the server
+-
+
+Feature list:
+- select spaces to sync
