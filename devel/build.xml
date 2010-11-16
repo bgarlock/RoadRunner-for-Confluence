@@ -2,7 +2,7 @@
 <project name="RoadRunner" default="all">
 
 
-    <property file="rr-build.properties"/>
+    <property file="build.properties"/>
     <property environment="env"/>
     <!--<property name="project.jdk.home" value="${jdk.home.1.5}"/>-->
     <!--<property name="project.jdk.home" value="${env.JAVA_HOME}"/>-->
@@ -143,6 +143,12 @@
                 <type type="file"/>
             </fileset>
         </copy>
+
+        <copy todir="${rr.output.classes.dir}/biz/artemis/roadrunner/resources">
+            <fileset dir="resources" />
+        </copy>
+
+
         <copyfile src="${module.rr.basedir}/log4j.properties" dest="${rr.output.classes.dir}"/>
     </target>
 
@@ -194,13 +200,13 @@
         <delete dir="target/rr/output"/>
         <copyfile src="log4j.properties" dest="${module.rr.basedir}/target/roadrunner/classes/log4j.properties"/>
         <antcall target="CreateExecutableJarFileWithExternalLibrary"/>
-        <zip basedir="target" excludes="rr/classes/**, rr/lib/**, target/rr/lib/**" destfile="../dist/rr.zip"/>
+        <zip basedir="target" excludes="classes/**, roadrunner/lib/**" destfile="../dist/rr.zip"/>
         <!--<zip basedir="target" excludes="rr/classes/**, rr/lib/**, target/rr/lib/**" excludesfile="bin/run_rr_devel.sh" destfile="../dist/rr.zip"/>-->
     </target>
 
     <target name="CreateExecutableJarFileWithExternalLibrary">
-        <jar destfile="target/rr/rr.jar" update="false">
-            <zipfileset dir="${module.rr.basedir}/target/roadrunner/classes" prefix=""/>
+        <jar destfile="${rr.output.dir}/rr.jar" update="false">
+            <zipfileset dir="${module.rr.basedir}/target/classes" prefix=""/>
 
             <zipfileset src="${module.rr.basedir}/lib/TableLayout.jar"/>
             <zipfileset src="${module.rr.basedir}/lib/activation.jar"/>

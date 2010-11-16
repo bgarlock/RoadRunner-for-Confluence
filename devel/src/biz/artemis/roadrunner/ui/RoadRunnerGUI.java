@@ -903,7 +903,7 @@ public class RoadRunnerGUI {
                         ((GridBagLayout)startSyncPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
                         //---- rrIconLabel ----
-                        rrIconLabel.setIcon(new ImageIcon("/Users/brendan/projects/roadrunner/devel/resources/rr-logo-v2.png"));
+                        rrIconLabel.setIcon(new ImageIcon(getClass().getResource("/biz/artemis/roadrunner/resources/rr-logo-v2.png")));
                         startSyncPanel.add(rrIconLabel, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                             GridBagConstraints.CENTER, GridBagConstraints.NONE,
                             new Insets(0, 0, 0, 0), 0, 0));
@@ -988,7 +988,7 @@ public class RoadRunnerGUI {
 
                         //======== serverInfoFormPanel ========
                         {
-                            serverInfoFormPanel.setBorder(new TitledBorder("Confluence Server Settings"));
+                            serverInfoFormPanel.setBorder(new TitledBorder(null, "Confluence Server Settings", TitledBorder.LEADING, TitledBorder.TOP));
                             serverInfoFormPanel.setLayout(new FormLayout(
                                 "2*(default, $lcgap), [80dlu,default]:grow, 2*($lcgap, default)",
                                 "4*(default, $lgap), default"));
@@ -1070,7 +1070,7 @@ public class RoadRunnerGUI {
 
                     //======== spacesPanel ========
                     {
-                        spacesPanel.setBorder(new TitledBorder("Synchronization Select"));
+                        spacesPanel.setBorder(new TitledBorder(null, "Synchronization Select", TitledBorder.LEADING, TitledBorder.TOP));
                         spacesPanel.setLayout(new FormLayout(
                             "default:grow, $lcgap, 20dlu, $lcgap, default:grow, $lcgap, 21dlu, $lcgap, default:grow",
                             "5*(default, $lgap), fill:113dlu:grow"));
@@ -1226,7 +1226,7 @@ public class RoadRunnerGUI {
 
                         //======== panel4 ========
                         {
-                            panel4.setBorder(new TitledBorder("local page tree"));
+                            panel4.setBorder(new TitledBorder(null, "local page tree", TitledBorder.LEADING, TitledBorder.TOP));
                             panel4.setLayout(new FormLayout(
                                 "2*(default, $lcgap), 50dlu:grow, 2*($lcgap, default)",
                                 "default:grow"));

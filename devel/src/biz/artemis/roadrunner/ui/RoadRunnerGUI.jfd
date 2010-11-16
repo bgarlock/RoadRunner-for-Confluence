@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<java version="1.5.0_16" class="java.beans.XMLDecoder"> 
+<java version="1.6.0_22" class="java.beans.XMLDecoder"> 
  <object class="com.jformdesigner.model.FormModel"> 
   <void property="contentType"> 
    <string>form/swing</string> 
@@ -14,7 +14,7 @@
       </object> 
       <void method="setProperty"> 
        <string>title</string> 
-       <string>RoadRunner For Confluence v0.4.0</string> 
+       <string>RoadRunner For Confluence v0.4.3</string> 
       </void> 
       <void method="setProperty"> 
        <string>iconImage</string> 
@@ -97,8 +97,8 @@
               <void method="setProperty"> 
                <string>icon</string> 
                <object class="com.jformdesigner.model.SwingIcon"> 
-                <int>1</int> 
-                <string>/Users/brendan/projects/roadrunner/devel/resources/rr-logo-v2.png</string> 
+                <int>0</int> 
+                <string>/biz/artemis/roadrunner/resources/rr-logo-v2.png</string> 
                </object> 
               </void> 
               <void property="name"> 
