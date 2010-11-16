@@ -2,5 +2,5 @@
 # with a VM argument. 
 APP_NAME="UWC"
 APPLE_ARGS="-Xdock:name=$APP_NAME"
-java -Xms256m -Xmx256m $APPLE_ARGS -jar uwc.jar
+java -Xms256m -Xmx256m $APPLE_ARGS -jar rr.jar
 
