@@ -14,7 +14,7 @@
       </object> 
       <void method="setProperty"> 
        <string>title</string> 
-       <string>RoadRunner For Confluence v0.4.3</string> 
+       <string>RoadRunner For Confluence v0.5.0</string>
       </void> 
       <void method="setProperty"> 
        <string>iconImage</string> 
