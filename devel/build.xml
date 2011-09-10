@@ -96,7 +96,7 @@
     <path id="rr.module.classpath">
         <!--<path refid="${module.jdk.classpath.rr}"/>-->
         <!--<pathelement location="/Users/brendan/Desktop/projects/confluence-remote-java-wrapper/devel/target/classes"/>-->
-        <pathelement location="/Users/brendan/Desktop/projects/roadrunner/devel/target/roadrunner/classes"/>
+        <pathelement location="target/roadrunner/classes"/>
         <!--<path refid="intellij.classpath"/>-->
 
         <fileset dir="${module.rr.basedir}/lib">
