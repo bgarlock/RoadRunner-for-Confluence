@@ -586,14 +586,11 @@ public class RoadRunnerGUI {
 
     }
 
+    /**
+     * setting this to permanent true since we are now opensourcing
+     * @return
+     */
     private boolean licenseIsValid() {
-        Calendar expDateCal = Calendar.getInstance();
-        Calendar now = Calendar.getInstance();
-        expDateCal.set(2011, 05, 12);
-        if (now.after(expDateCal)) {
-            JOptionPane.showMessageDialog(null, "The temporary license for RoadRunner has expired please obtain a new version", "alert", JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
         return true;
     }
 
@@ -879,7 +876,7 @@ public class RoadRunnerGUI {
 
         //======== MainFrame ========
         {
-            MainFrame.setTitle("RoadRunner For Confluence v0.4.3");
+            MainFrame.setTitle("RoadRunner For Confluence v0.5.0");
             MainFrame.setIconImage(new ImageIcon("/Users/brendan/Desktop/projects/roadrunner/devel/FreeMindWindowIcon.png").getImage());
             Container MainFrameContentPane = MainFrame.getContentPane();
             MainFrameContentPane.setLayout(new BorderLayout());
