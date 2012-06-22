@@ -900,7 +900,7 @@ public class RoadRunnerGUI {
                         ((GridBagLayout)startSyncPanel.getLayout()).rowWeights = new double[] {0.0, 0.0, 0.0, 0.0, 0.0, 1.0E-4};
 
                         //---- rrIconLabel ----
-                        rrIconLabel.setIcon(new ImageIcon(getClass().getResource("/biz/artemis/roadrunner/resources/rr-logo-v2.png")));
+                        rrIconLabel.setIcon(new ImageIcon(getClass().getResource("/rr-logo-v2.png")));
                         startSyncPanel.add(rrIconLabel, new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0,
                             GridBagConstraints.CENTER, GridBagConstraints.NONE,
                             new Insets(0, 0, 0, 0), 0, 0));
