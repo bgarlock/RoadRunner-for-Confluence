@@ -24,10 +24,12 @@ import org.apache.xmlrpc.XmlRpcException;
  * This is the RoadRunner's engine front end, first class called.
  * This is a 'director' class if you will.
  * <p/>
- * responsible for determining which pages need schronization and
+ * responsible for determining which pages need synchronization and
  * then kicking that off
  * <p/>
  * primary starting method is synchronizeConfluence_old()
+ *
+ * Nasty and ugly hack for accepting self signed SSL certs
  */
 public class ConfluenceSynchronizer {
     Logger log = Logger.getLogger(this.getClass().getName());
@@ -82,6 +84,9 @@ public class ConfluenceSynchronizer {
             SpaceSyncDefinition spaceSyncDefinition = allSpaceSyncs.get(i);
             ConfluenceServer sourceServer = spaceSyncDefinition.getSourceServer();
             ConfluenceServerSettings xmlRpcSettings = sourceServer.getConfluenceServerSettingsForXmlRpc();
+            // lil hack for allowing self signed SSL certs - B. Garlock
+            // @todo - I'm sure there is a better way :-)
+            xmlRpcSettings.setTrustallcerts("true");
             List<PageForXmlRpc> pageSummaries = rwb.getAllServerPageSummaries(xmlRpcSettings, spaceSyncDefinition.getSourceSpaceKey());
             for (int j = 0; j < pageSummaries.size(); j++) {
                 PageForXmlRpc pageForXmlRpc = pageSummaries.get(j);
@@ -124,6 +129,9 @@ public class ConfluenceSynchronizer {
         liveContentVersionsListContainer.save();
     }
 
+    private void setTrustallcerts(String aTrue) {
+    }
+
     /**
      * convenience method to set up the RRProgress dashboard, center it, make it visible, etc.
      *
@@ -149,7 +157,6 @@ public class ConfluenceSynchronizer {
      *
      * @param localServer
      * @param remoteServer
-     * @param model
      * @param checkedPaths
      * @param sendAttachments
      */
@@ -393,7 +400,7 @@ public class ConfluenceSynchronizer {
             if (RemoteWikiBroker.USER_MESSAGE_CONNECTIVTY_SUCCESS.equals(connectionInfoMessage)) {
                 connectionValid = true;
             } else {
-                userMessage.append("there was an isue with the server: " + confluenceServer.getServerAlias() + ". \n");
+                userMessage.append("there was an issue with the server: " + confluenceServer.getServerAlias() + ". \n");
                 userMessage.append(connectionInfoMessage);
                 userMessage.append("\n");
                 userMessage.append("\n");
